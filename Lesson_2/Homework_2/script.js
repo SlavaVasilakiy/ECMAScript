@@ -23,13 +23,15 @@ class Book {
   }
 
   displayInfo() {
-    return `Title: ${this.title}, Author: ${this.author}, Pages: ${this.pages}`;
+    console.log(
+      `Title: ${this.title}, Author: ${this.author}, Pages: ${this.pages}`
+    );
   }
 }
 
 // Пример использования класса
 const book = new Book("BookName1", "Author1", 123);
-console.log(book.displayInfo()); // Выведет "Title: BookName1, Author: Author1, Pages: 123"
+book.displayInfo(); // Выведет "Title: BookName1, Author: Author1, Pages: 123"
 
 // Задание 2: "Управление списком студентов"
 // Реализуйте класс Student, представляющий студента, со следующими свойствами и методами:
