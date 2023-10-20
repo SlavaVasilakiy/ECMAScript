@@ -1,3 +1,4 @@
+"use strict";
 // Урок 3. Объектно-ориентированное программирование в Javascript
 // Задание 1: "Управление персоналом компании"
 
@@ -15,7 +16,6 @@
 
 // const manager = new Manager("Jane Doe", "Sales");
 // manager.displayInfo(); // "Name: John Doe, Department: Sales"
-
 
 // Задание 2: "Управление списком заказов"
 
