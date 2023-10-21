@@ -51,29 +51,31 @@ manager.displayInfo(); // "Name: John Doe, Department: Sales"
 // Метод getTotalPrice() - возвращает общую стоимость заказа, основанную на ценах продуктов.
 
 class Product {
-	constructor(name, price, quantity) {
-		this.name = name;
-		this.price = price;
-		this.quantity = quantity;
-	}
+  constructor(name, price, quantity) {
+    this.name = name;
+    this.price = price;
+    this.quantity = quantity;
+  }
 }
 
 class Order {
-	constructor(id) {
-		this.id = id;
-		this.products = [];
-	}
-	addProduct(product) {
-		this.products.push(product);
-	}
-	getTotalPrice() {
-		let totalPrice = 0;
+  products = [];
+  constructor(id) {
+    this.id = id;
+  }
+  addProduct(product) {
+    this.products.push(product);
+  }
+  getTotalPrice() {
+    /* let totalPrice = 0;
 		for (const product of this.products) {
-			totalPrice += product.price * product.quantity;
-		}
-		return totalPrice;
-	}
+		 	totalPrice += product.price * product.quantity;
+		 }
+		 return totalPrice; */
+		return this.products.reduce((totalPrice, product) => totalPrice + product.price * product.quantity, 0)
+  }
 }
+
 // Пример использования:
 const order = new Order(12345);
 
@@ -84,4 +86,3 @@ const product2 = new Product("Headphones", 100, 1);
 order.addProduct(product2);
 
 console.log(order.getTotalPrice()); // Вывод: 1100
-
