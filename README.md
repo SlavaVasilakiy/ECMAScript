@@ -1,1 +1,1 @@
-# ECMAScript
+# ECMAScript learning
