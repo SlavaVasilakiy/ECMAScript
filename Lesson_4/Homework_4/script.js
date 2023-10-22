@@ -16,7 +16,7 @@
 async function getUserData(id) {
   const response = await fetch(`https://reqres.in/api/users/${id}`);
   if (response.ok) {
-    console.log(await response.json());
+   return await response.json();
   } else {
     throw new Error(
       `Ошибка запроса, код ошибки: ${response.status}, запрашиваемый адрес не найден!`
@@ -24,7 +24,9 @@ async function getUserData(id) {
   }
 }
 
-getUserData(1);
+getUserData(3)
+  .then((result) => console.log(result))
+  .catch((err) => console.log(`Ошибка: ${err.message}`));
 
 // Задание 2. Отправка данных на сервер.
 
@@ -43,7 +45,6 @@ async function saveUserData(userData) {
   try {
     const response = await fetch("https://reqres.in/api/users", requestOptions);
     if (response.ok) {
-      console.log(response.status);
       return response.json();
     } else {
       throw new Error(`Ошибка запроса, код ошибки: ${response.status}`);
