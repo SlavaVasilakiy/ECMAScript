@@ -164,7 +164,7 @@ async function data() {
     const ulElement = document.querySelector(".ul");
     ulElement.innerHTML = dataLoad
       .map(function (user) {
-        return `<li>Name: ${user.name}</li>`;
+        return `<li>Name: ${user.first_name}</li>`;
       })
       .join("");
     // dataLoad.forEach((e) => {
